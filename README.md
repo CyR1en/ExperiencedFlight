@@ -12,6 +12,12 @@ Enable players to fly using their experience as flight fuel. As players fly, the
 
 ## Features
 
+#### Balanced
+
+- Experience decay is relative to the player's level. So higher level, slower decay.
+    
+     >_Experience don't grow on trees_
+
 #### Flight Class (Permission Based)
 
 - Four different flight classes. Economy class, Business class, and First class.
@@ -20,7 +26,7 @@ Enable players to fly using their experience as flight fuel. As players fly, the
   - Business = expflight.business
   - First Class = expflight.firstclass
   
-   _Note: Players must have `expflight.expfly` permission before they can fly._
+   >_Note: Players must have `expflight.expfly` permission before they can fly._
 
 #### Light Weight Processing
 
