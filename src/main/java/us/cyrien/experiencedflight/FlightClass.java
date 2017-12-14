@@ -61,7 +61,6 @@ public enum FlightClass {
             return f;
         }
 
-
         @Override
         public String toString() {
             return "First class";

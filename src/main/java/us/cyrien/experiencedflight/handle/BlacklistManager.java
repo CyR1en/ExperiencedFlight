@@ -3,6 +3,7 @@ package us.cyrien.experiencedflight.handle;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import us.cyrien.experiencedflight.ExperiencedFlight;
+import us.cyrien.mcutils.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,11 +22,14 @@ public class BlacklistManager {
 
     public void init() {
         List<String> l = (List<String>) expFly.getExpFlightConfig().getList("Blacklisted-Worlds");
-        l.forEach(s -> {
-            World w = Bukkit.getWorld(s);
-            if(w != null)
-                worlds.put(w.getName(), w);
-        });
+        if(l != null) {
+            l.forEach(s -> {
+                World w = Bukkit.getWorld(s);
+                if (w != null)
+                    worlds.put(w.getName(), w);
+            });
+        } else
+            Logger.warn("BlackListManager could not be initialized at this time. Configure the plugin and reload or restart.");
     }
 
     public void add(World world) {

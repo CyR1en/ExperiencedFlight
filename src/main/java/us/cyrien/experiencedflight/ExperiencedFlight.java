@@ -11,6 +11,7 @@ import us.cyrien.experiencedflight.listener.BedListener;
 import us.cyrien.experiencedflight.listener.UserQuitListener;
 import us.cyrien.experiencedflight.task.DecayTask;
 import us.cyrien.mcutils.Frame;
+import us.cyrien.mcutils.Metrics;
 import us.cyrien.mcutils.config.Config;
 import us.cyrien.mcutils.config.ConfigManager;
 
@@ -26,11 +27,11 @@ public class ExperiencedFlight extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Metrics metrics = new Metrics(this);
         configManager = new ConfigManager(this);
         experiencedFlightConfigManager = new ExperiencedFlightConfigManager(this, configManager);
         experiencedFlightConfigManager.setupConfigurations();
         airTrafficController = new AirTrafficController(this);
-        blacklistManager = new BlacklistManager(this);
         experiencedFlight = this;
         decayTask = new DecayTask(this);
         Bukkit.getScheduler().runTaskLater(this, () -> {
@@ -38,6 +39,7 @@ public class ExperiencedFlight extends JavaPlugin {
             initListener();
             Frame.main();
             startDecay();
+            blacklistManager = new BlacklistManager(this);
             blacklistManager.init();
         }, 1L);
     }
