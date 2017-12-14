@@ -1,0 +1,32 @@
+name: ExperiencedFlight
+version: 0.0.7
+author: CyRien
+description: Monetized Flying
+
+main: us.cyrien.experiencedflight.ExperiencedFlight
+
+permissions:
+    expflight.expfly:
+        description: Allow players to use /expfly.
+        default: op
+    expflight.economy:
+        description: Expensive flight.
+        default: false
+    expflight.business:
+        description: Averaged priced flight
+        default: false
+    expflight.firstclass:
+        description: Very cheap flight.
+        default: op
+    expflight.givelvl:
+        description: Allow players to do /givelvl.
+        default: op
+    expflight.givexp:
+        description: Allow players to do /givexp.
+        default: op
+    expflight.reload:
+        description: Allow players to do /expflight reload.
+        default: op
+    expflight.blacklist:
+        descrioption: Allow players to use /blacklist command.
+        default: op
