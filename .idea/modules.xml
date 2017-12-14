@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExperiencedFlight.iml" filepath="$PROJECT_DIR$/.idea/modules/ExperiencedFlight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExperiencedFlight_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ExperiencedFlight_main.iml" group="ExperiencedFlight" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExperiencedFlight_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ExperiencedFlight_test.iml" group="ExperiencedFlight" />
+    </modules>
+  </component>
+</project>
