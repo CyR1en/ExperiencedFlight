@@ -1,6 +1,7 @@
 package us.cyrien.experiencedflight.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import us.cyrien.experiencedflight.Messenger;
@@ -22,5 +23,6 @@ public class GiveLvlCmd {
         }
         Player p = Bukkit.getPlayer(player);
         p.setLevel(p.getLevel() + amount);
+        Messenger.sendMsg(p, "Given " + ChatColor.DARK_GREEN + amount + ChatColor.RESET + " levels to "  + ChatColor.DARK_AQUA + p.getName() + ChatColor.RESET);
     }
 }

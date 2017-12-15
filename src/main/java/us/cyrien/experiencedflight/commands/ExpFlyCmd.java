@@ -23,13 +23,13 @@ public class ExpFlyCmd {
         } else {
             Player p = (Player) sender;
             if (p.getLevel() == 0) {
-                Messenger.sendWarning(p, "You don't have enough levels to fly");
+                Messenger.sendWarning(sender, "You don't have enough levels to fly");
                 return;
             } else if (p.getGameMode().equals(GameMode.CREATIVE) || p.getGameMode().equals(GameMode.SPECTATOR)) {
-                Messenger.sendWarning(p, "You can only use ExperiencedFlight in survival game modes");
+                Messenger.sendWarning(sender, "You can only use ExperiencedFlight in survival game modes");
                 return;
             } else if (bm.contains(p.getWorld())) {
-                Messenger.sendWarning(p, "This world is a blacklisted by the Air Traffic Controller");
+                Messenger.sendWarning(sender, "This world is a blacklisted by the Air Traffic Controller");
                 return;
             }
             AirTrafficController atc = ExperiencedFlight.getInstance().getATC();
@@ -37,11 +37,11 @@ public class ExpFlyCmd {
             if (enabled) {
                 atc.getFlight(p).cancelClearance();
                 atc.removeFlight(p);
-                Messenger.sendMsg(p, ChatColor.RED + "Disabled ExperiencedFlight" + ChatColor.RESET + ". Thanks for flying with ExperiencedFlight!");
+                Messenger.sendMsg(sender, ChatColor.RED + "Disabled ExperiencedFlight" + ChatColor.RESET + ". Thanks for flying with ExperiencedFlight!");
             } else {
                 atc.addFlight(p);
                 atc.getFlight(p).giveClearance();
-                Messenger.sendMsg(p, ChatColor.GREEN + "Enabled Experienced Flight.");
+                Messenger.sendMsg(sender, ChatColor.GREEN + "Enabled Experienced Flight.");
             }
         }
     }

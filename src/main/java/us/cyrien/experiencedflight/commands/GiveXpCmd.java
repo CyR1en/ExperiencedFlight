@@ -1,6 +1,7 @@
 package us.cyrien.experiencedflight.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import us.cyrien.experiencedflight.Messenger;
@@ -28,5 +29,6 @@ public class GiveXpCmd {
         } else {
             ExperienceManager.changeExp(p, amount);
         }
+        Messenger.sendMsg(sender, "Given " + ChatColor.DARK_GREEN + amount + ChatColor.RESET + " xp to "  + ChatColor.DARK_AQUA + p.getName() + ChatColor.RESET);
     }
 }
